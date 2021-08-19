@@ -13,14 +13,9 @@ namespace HealthCheck.HealthChecks
 
             if (myProcess==null)
                 throw new InvalidProgramException("There is no application that's name is: " + processName);
-                
             else
-            {
                 return myProcess.Responding;
-            }
-                
-       
-        }
+       }
         
         public static Process FindSpecificProcess(string processName)
         {
@@ -38,7 +33,7 @@ namespace HealthCheck.HealthChecks
             Process[] processes = GetProcesses();
 
             foreach (Process process in processes)
-                Console.WriteLine("Process Name:" + process.ProcessName, " Process Stat:" + process.Responding);
+                Console.WriteLine("Process Name:" + process.ProcessName+ " Process Stat:" + process.Responding);
         }
 
         public static Process[] GetProcesses() {return Process.GetProcesses();}
