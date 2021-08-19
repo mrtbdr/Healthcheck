@@ -2,7 +2,7 @@
 using System.Diagnostics;
 
 
-namespace Denemeeee
+namespace HealthCheck.HealthChecks
 {
     public class CheckHealthOfProcess
     {
