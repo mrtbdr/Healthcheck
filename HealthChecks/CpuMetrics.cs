@@ -13,15 +13,16 @@ namespace HealthCheck.HealthChecks
     {
         
 
-        public static string DoIt()
+        public static double DoIt()
         {
                 CpuMetrics cpuMetrics = new CpuMetrics();
                 var cpuLines = cpuMetrics.GetWmicOutput("CPU get Name,LoadPercentage /Value").Split("\n");
 
                 var CpuUse = cpuLines[0].Split("=", StringSplitOptions.RemoveEmptyEntries)[1];
                 var CpuName = cpuLines[1].Split("=", StringSplitOptions.RemoveEmptyEntries)[1];
-
-                return CpuUse;
+                
+           
+                return Convert.ToDouble(CpuUse);
         }
 
         public string GetWmicOutput(string query, bool redirectStandardOutput = true)
