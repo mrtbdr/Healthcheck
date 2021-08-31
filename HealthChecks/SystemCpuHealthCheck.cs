@@ -14,12 +14,12 @@ namespace HealthCheck.HealthChecks
         {
             var client = CpuMetrics.DoIt();
 
-            double doubleClient = Convert.ToDouble(client);
+            
 
 
             var status = HealthStatus.Healthy;
 
-            status = HealthStatus.Healthy;
+            
             if (doubleClient < 10)
             {
                 return Task.FromResult(HealthCheckResult.Healthy($"The respond time is good({doubleClient }.ms")
